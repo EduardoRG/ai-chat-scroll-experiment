@@ -10,7 +10,7 @@ This is a React + TypeScript + Vite application exploring AI user experience pat
 
 - Follow the existing `src/features/` pattern for major functionality
 - Each feature contains its own `components/`, Redux slice, and type definitions
-- Example: `src/features/thread/` contains Thread components, `messagesSlice.ts`, and `types.ts`
+- Example: `src/features/thread/` contains Thread components, `threadSlice.ts`, and `types.ts`
 
 ### Redux Patterns
 
@@ -27,7 +27,6 @@ export const selectMessages = (state: RootState) => state.messages.messages;
 ### Component Conventions
 
 - Use named exports for components: `export const ComponentName = () => {}`
-- Tailwind classes with dark mode support: `bg-white dark:bg-gray-900`
 - Feature components live in `src/features/[feature]/components/`
 - Shared components would go in `src/components/`
 
@@ -36,13 +35,11 @@ export const selectMessages = (state: RootState) => state.messages.messages;
 ### Styling
 
 - **Tailwind CSS v4** with Vite plugin (not PostCSS)
-- Dark mode classes throughout: `text-gray-900 dark:text-white`
-- Custom CSS properties: `h-header-height` (see existing usage)
 
 ### State Management
 
 - Redux Toolkit with TypeScript
-- Typed hooks: `useAppDispatch()` and `useAppSelector()` from `src/hooks.ts`
+- Typed hooks: `useDispatch()` and `useSelector()` from `src/hooks.ts`
 - State slices follow domain boundaries (e.g., messages for thread feature)
 
 ### Development
@@ -61,11 +58,10 @@ export const selectMessages = (state: RootState) => state.messages.messages;
 
 ### Styling Components
 
-- Use existing Tailwind patterns with dark mode variants
+- Use existing Tailwind patterns with dark mode support
 - Maintain responsive design with Tailwind breakpoints and viewport units (`svh`)
 
 ### Redux State Updates
 
 - Use `createSlice` with PayloadAction types
 - Export both actions and typed selectors
-- Follow immutable patterns (RTK handles this with Immer)

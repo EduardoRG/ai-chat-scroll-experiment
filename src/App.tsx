@@ -1,3 +1,5 @@
+import { ChatView } from './features/chat/chat-view';
+
 export const App = () => {
-  return <div className="h-full bg-gray-900 text-white"></div>;
+  return <ChatView />;
 };
